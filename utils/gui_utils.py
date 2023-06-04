@@ -276,6 +276,6 @@ def add_background_audio(youtube_uri, filename, citation):
     with Path("utils/.config.template.toml").open("w") as toml_file:
         toml_file.write(tomlkit.dumps(config))
 
-    flash(f'Added "{citation}-{filename}.mp4" as a new background video!')
+    flash(f'Added "{citation}-{filename}.mp3" as a new background audio!')
 
     return

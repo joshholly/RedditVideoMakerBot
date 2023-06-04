@@ -89,6 +89,9 @@ def sanitize_text(text: str) -> str:
     regex_expr = r"\s['|’]|['|’]\s|[\^_~@!&;#:\-%—“”‘\"%\*/{}\[\]\(\)\\|<>=+]"
     result = re.sub(regex_expr, " ", result)
     result = result.replace("+", "plus").replace("&", "and")
+    result = result.replace("TIFU", "Today I Effed Up")
+    result = result.replace("AncestryDNA", "Ancestry DNA")
+    result = result.replace("TLDR", "Too long, didn't read").replace("TL DR","Too Long, didn't read.")
 
     # emoji removal if the setting is enabled
     if settings.config["settings"]["tts"]["no_emojis"]:

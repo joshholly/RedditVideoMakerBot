@@ -71,7 +71,7 @@ def background_add_audio():
 
     gui.add_background_audio(youtube_uri, filename, citation)
 
-    return redirect(url_for("backgrounds"))
+    return redirect(url_for("background_audio"))
 
 
 @app.route("/background/delete", methods=["POST"])

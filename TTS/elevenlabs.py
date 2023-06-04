@@ -5,6 +5,7 @@ from elevenlabs import generate, save
 from utils import settings
 
 voices = [
+    "Rachel",
     "Adam",
     "Antoni",
     "Arnold",
@@ -37,7 +38,7 @@ class elevenlabs:
             )
 
         audio = generate(
-            api_key=api_key, text=text, voice=voice, model="eleven_multilingual_v1"
+            api_key=api_key, text=text, voice=voice, model="eleven_monolingual_v1"
         )
         save(audio=audio, filename=filepath)
 

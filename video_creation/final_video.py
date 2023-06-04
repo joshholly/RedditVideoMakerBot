@@ -158,7 +158,7 @@ def make_final_video(
     # Gather all audio clips
     audio_clips = list()
     if number_of_clips == 0 and settings.config["settings"]["storymode"] == "false":
-        print(
+        print( 
             "No audio clips to gather. Please use a different TTS or post."
         )  # This is to fix the TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
         exit()
@@ -263,8 +263,9 @@ def make_final_video(
                         "scale", screenshot_width, -1
                     )
                 )
+                image_overlay = image_clips[i].filter("colorchannelmixer", aa=opacity)
                 background_clip = background_clip.overlay(
-                    image_clips[i],
+                    image_overlay,
                     enable=f"between(t,{current_time},{current_time + audio_clips_durations[i]})",
                     x="(main_w-overlay_w)/2",
                     y="(main_h-overlay_h)/2",

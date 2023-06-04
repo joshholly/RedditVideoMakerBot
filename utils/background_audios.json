@@ -5,22 +5,22 @@
         "lofi.mp3",
         "Super Lofi World"
     ],
-    "lofi-2":[
+    "lofi-2": [
         "https://www.youtube.com/watch?v=BEXL80LS0-I",
         "lofi-2.mp3",
         "stompsPlaylist"
     ],
-    "chill-summer":[
+    "chill-summer": [
         "https://www.youtube.com/watch?v=EZE8JagnBI8",
         "chill-summer.mp3",
         "Mellow Vibes Radio"
     ],
-    "chill-drive":[
+    "chill-drive": [
         "https://www.youtube.com/watch?v=PrkcHiDLRDg",
         "chill-drive.mp3",
         "Cardamon Radio"
     ],
-    "chill-lofi":[
+    "chill-lofi": [
         "https://www.youtube.com/watch?v=CLeZyIID9Bo",
         "chill-lofi.mp3",
         "Settle"
@@ -34,5 +34,10 @@
         "https://www.youtube.com/watch?v=lTRiuFIWV54",
         "study-session",
         "Lofi Girl"
+    ],
+    "midnight-rain": [
+        "https://www.youtube.com/watch?v=Jo_e_v6Lh5I",
+        "midnight-rain.mp4",
+        "Hitkend Chill"
     ]
 }
