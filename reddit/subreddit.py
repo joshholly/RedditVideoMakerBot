@@ -137,6 +137,7 @@ def get_subreddit_threads(POST_ID: str):
     content["thread_id"] = submission.id
     content["is_nsfw"] = submission.over_18
     content["comments"] = []
+    submission.comment_sort = "top"
     if settings.config["settings"]["storymode"]:
         if settings.config["settings"]["storymodemethod"] == 1:
             content["thread_post"] = posttextparser(submission.selftext)

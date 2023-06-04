@@ -156,6 +156,15 @@
                 </div>
             </div>
             <div class="row mb-2">
+                <label class="col-4">Story Mode</label>
+                <div class="col-8">
+                    <div class="form-check form-switch">
+                        <input name="storymode" class="form-check-input" type="checkbox" value="True"
+                            data-toggle="tooltip" data-original-title='If checked, it will set post type to storymode.'>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
                 <label for="theme" class="col-4">Reddit Theme</label>
                 <div class="col-8">
                     <select name="theme" class="form-select" data-toggle="tooltip"
@@ -200,12 +209,26 @@
                 </div>
             </div>
             <div class="row mb-2">
-                <label for="background_choice" class="col-4">Background Choice</label>
+                <label for="background_video" class="col-4">Background Video</label>
                 <div class="col-8">
-                    <select name="background_choice" class="form-select" data-toggle="tooltip"
+                    <select name="background_video" class="form-select" data-toggle="tooltip"
                         data-original-title='Sets the background of the video'>
                         <option value=" ">Random Video</option>
-                        {% for background in checks["background_choice"]["options"][1:] %}
+                        {% for background in checks["background_video"]["options"][1:] %}
+                        <option value="{{background}}">{{background}}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="form-text text-muted"><a href="/backgrounds" target="_blank">See all available
+                            backgrounds</a></span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="background_audio" class="col-4">Background Audio</label>
+                <div class="col-8">
+                    <select name="background_audio" class="form-select" data-toggle="tooltip"
+                        data-original-title='Sets the background of the video'>
+                        <option value=" ">Random Audio</option>
+                        {% for background in checks["background_audio"]["options"][1:] %}
                         <option value="{{background}}">{{background}}</option>
                         {% endfor %}
                     </select>
@@ -248,68 +271,23 @@
 
             <!-- TTS Settings -->
             <p class="h4">TTS Settings</p>
+        
+           
             <div class="row mb-2">
-                <label for="voice_choice" class="col-4">TTS Voice Choice</label>
-                <div class="col-8">
-                    <select name="voice_choice" class="form-select" data-toggle="tooltip"
-                        data-original-title='The voice platform used for TTS generation'>
-                        <option value="streamlabspolly">Streamlabspolly</option>
-                        <option value="tiktok">TikTok</option>
-                        <option value="googletranslate">Google Translate</option>
-                        <option value="awspolly">AWS Polly</option>
-                        <option value="pyttsx">Python TTS (pyttsx)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <label for="aws_polly_voice" class="col-4">AWS Polly Voice</label>
+                <label for="elevenlabs_voice_name" class="col-4">Elevenlabs Voice</label>
                 <div class="col-8">
                     <div class="input-group voices">
-                        <select name="aws_polly_voice" class="form-select" data-toggle="tooltip"
-                            data-original-title='The voice used for AWS Polly'>
-                            <option value="Brian">Brian</option>
-                            <option value="Emma">Emma</option>
-                            <option value="Russell">Russell</option>
-                            <option value="Joey">Joey</option>
-                            <option value="Matthew">Matthew</option>
-                            <option value="Joanna">Joanna</option>
-                            <option value="Kimberly">Kimberly</option>
-                            <option value="Amy">Amy</option>
-                            <option value="Geraint">Geraint</option>
-                            <option value="Nicole">Nicole</option>
-                            <option value="Justin">Justin</option>
-                            <option value="Ivy">Ivy</option>
-                            <option value="Kendra">Kendra</option>
-                            <option value="Salli">Salli</option>
-                            <option value="Raveena">Raveena</option>
-                        </select>
-
-                        <button type="button" class="btn btn-primary"><i id="awspolly_icon"
-                                class="bi-volume-up-fill"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <label for="streamlabs_polly_voice" class="col-4">Streamlabs Polly Voice</label>
-                <div class="col-8">
-                    <div class="input-group voices">
-                        <select id="streamlabs_polly_voice" name="streamlabs_polly_voice" class="form-select"
-                            data-toggle="tooltip" data-original-title='The voice used for Streamlabs Polly'>
-                            <option value="Brian">Brian</option>
-                            <option value="Emma">Emma</option>
-                            <option value="Russell">Russell</option>
-                            <option value="Joey">Joey</option>
-                            <option value="Matthew">Matthew</option>
-                            <option value="Joanna">Joanna</option>
-                            <option value="Kimberly">Kimberly</option>
-                            <option value="Amy">Amy</option>
-                            <option value="Geraint">Geraint</option>
-                            <option value="Nicole">Nicole</option>
-                            <option value="Justin">Justin</option>
-                            <option value="Ivy">Ivy</option>
-                            <option value="Kendra">Kendra</option>
-                            <option value="Salli">Salli</option>
-                            <option value="Raveena">Raveena</option>
+                        <select id="elevenlabs_voice_name" name="elevenlabs_voice_name" class="form-select"
+                            data-toggle="tooltip" data-original-title='The voice used for Elevenlabs'>
+                            <option value="Adam">Adam</option>
+                            <option value="Antoni">Antoni</option>
+                            <option value="Arnold">Arnold</option>
+                            <option value="Bella">Bella</option>
+                            <option value="Domi">Domi</option>
+                            <option value="Elli">Elli</option>
+                            <option value="Josh">Josh</option>
+                            <option value="Sam">Sam</option>
+                           
                         </select>
 
                         <button type="button" class="btn btn-primary"><i id="streamlabs_icon"
@@ -318,93 +296,12 @@
                 </div>
             </div>
             <div class="row mb-2">
-                <label for="tiktok_voice" class="col-4">TikTok Voice</label>
+                <label for="random_voice" class="col-4">Random Voices</label>
                 <div class="col-8">
-                    <div class="input-group voices">
-                        <select name="tiktok_voice" class="form-select" data-toggle="tooltip"
-                            data-original-title='The voice used for TikTok TTS'>
-                            <option disabled value="">-----Disney Voices-----</option>
-                            <option value="en_us_ghostface">Ghost Face</option>
-                            <option value="en_us_chewbacca">Chewbacca</option>
-                            <option value="en_us_c3po">C3PO</option>
-                            <option value="en_us_stitch">Stitch</option>
-                            <option value="en_us_stormtrooper">Stormtrooper</option>
-                            <option value="en_us_rocket">Rocket</option>
-                            <option disabled value="">-----English Voices-----</option>
-                            <option value="en_au_001">English AU - Female</option>
-                            <option value="en_au_002">English AU - Male</option>
-                            <option value="en_uk_001">English UK - Male 1</option>
-                            <option value="en_uk_003">English UK - Male 2</option>
-                            <option value="en_us_001">English US - Female (Int. 1)</option>
-                            <option value="en_us_002">English US - Female (Int. 2)</option>
-                            <option value="en_us_006">English US - Male 1</option>
-                            <option value="en_us_007">English US - Male 2</option>
-                            <option value="en_us_009">English US - Male 3</option>
-                            <option value="en_us_010">English US - Male 4</option>
-                            <option disabled value="">-----European Voices-----</option>
-                            <option value="fr_001">French - Male 1</option>
-                            <option value="fr_002">French - Male 2</option>
-                            <option value="de_001">German - Female</option>
-                            <option value="de_002">German - Male</option>
-                            <option value="es_002">Spanish - Male</option>
-                            <option disabled value="">-----American Voices-----</option>
-                            <option value="es_mx_002">Spanish MX - Male</option>
-                            <option value="br_001">Portuguese BR - Female 1</option>
-                            <option value="br_003">Portuguese BR - Female 2</option>
-                            <option value="br_004">Portuguese BR - Female 3</option>
-                            <option value="br_005">Portuguese BR - Male</option>
-                            <option disabled value="">-----Asian Voices-----</option>
-                            <option value="id_001">Indonesian - Female</option>
-                            <option value="jp_001">Japanese - Female 1</option>
-                            <option value="jp_003">Japanese - Female 2</option>
-                            <option value="jp_005">Japanese - Female 3</option>
-                            <option value="jp_006">Japanese - Male</option>
-                            <option value="kr_002">Korean - Male 1</option>
-                            <option value="kr_003">Korean - Female</option>
-                            <option value="kr_004">Korean - Male 2</option>
-                        </select>
-
-                        <button type="button" class="btn btn-primary"><i id="tiktok_icon"
-                                class="bi-volume-up-fill"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <label for="tiktok_sessionid" class="col-4">TikTok SessionId</label>
-                <div class="col-8">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="bi bi-mic-fill"></i>
-                        </div>
-                        <input value="{{ data.tiktok_sessionid }}" name="tiktok_sessionid" type="text" class="form-control"
+                    <div class="form-check form-switch">
+                        <input name="random_voice" class="form-check-input" type="checkbox" value="True"
                             data-toggle="tooltip"
-                            data-original-title="TikTok sessionid needed for the TTS API request. Check documentation if you don't know how to obtain it.">
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <label for="python_voice" class="col-4">Python Voice</label>
-                <div class="col-8">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="bi bi-mic-fill"></i>
-                        </div>
-                        <input value="{{ data.python_voice }}" name="python_voice" type="text" class="form-control"
-                            data-toggle="tooltip"
-                            data-original-title='The index of the system TTS voices (can be downloaded externally, run ptt.py to find value, start from zero)'>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <label for="py_voice_num" class="col-4">Py Voice Number</label>
-                <div class="col-8">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="bi bi-headset"></i>
-                        </div>
-                        <input value="{{ data.py_voice_num }}" name="py_voice_num" type="text" class="form-control"
-                            data-toggle="tooltip"
-                            data-original-title='The number of system voices (2 are pre-installed in Windows)'>
+                            data-original-title='If checked a random voices will be used'>
                     </div>
                 </div>
             </div>
@@ -421,10 +318,9 @@
             </div>
             <div class="col text-center">
                 <br>
-                <button id="defaultSettingsBtn" type="button" class="btn btn-secondary">Default
-                    Settings</button>
+            
                 <button id="submitButton" type="submit" class="btn btn-success">Save
-                    Changes</button>
+                    Changes & Start Bot</button>
             </div>
         </form>
     </div>

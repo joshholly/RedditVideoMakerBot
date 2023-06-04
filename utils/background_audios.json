@@ -14,5 +14,25 @@
         "https://www.youtube.com/watch?v=EZE8JagnBI8",
         "chill-summer.mp3",
         "Mellow Vibes Radio"
+    ],
+    "chill-drive":[
+        "https://www.youtube.com/watch?v=PrkcHiDLRDg",
+        "chill-drive.mp3",
+        "Cardamon Radio"
+    ],
+    "chill-lofi":[
+        "https://www.youtube.com/watch?v=CLeZyIID9Bo",
+        "chill-lofi.mp3",
+        "Settle"
+    ],
+    "lofi-hiphop": [
+        "https://www.youtube.com/watch?v=i43tkaTXtwI",
+        "lofi-hiphop",
+        "Lofi Girl"
+    ],
+    "study-session": [
+        "https://www.youtube.com/watch?v=lTRiuFIWV54",
+        "study-session",
+        "Lofi Girl"
     ]
 }

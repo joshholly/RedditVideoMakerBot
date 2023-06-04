@@ -1,5 +1,6 @@
 import webbrowser
 from pathlib import Path
+import subprocess
 
 # Used "tomlkit" instead of "toml" because it doesn't change formatting on "dump"
 import tomlkit
@@ -45,6 +46,9 @@ def index():
 def backgrounds():
     return render_template("backgrounds.html", file="backgrounds.json")
 
+@app.route("/background_audio", methods=["GET"])
+def background_audios():
+    return render_template("background_audio.html", file="background_audios.json")
 
 @app.route("/background/add", methods=["POST"])
 def background_add():
@@ -55,6 +59,17 @@ def background_add():
     position = request.form.get("position").strip()
 
     gui.add_background(youtube_uri, filename, citation, position)
+
+    return redirect(url_for("backgrounds"))
+
+@app.route("/background_audio/add", methods=["POST"])
+def background_add_audio():
+    # Get form values
+    youtube_uri = request.form.get("youtube_uri").strip()
+    filename = request.form.get("filename").strip()
+    citation = request.form.get("citation").strip()
+
+    gui.add_background_audio(youtube_uri, filename, citation)
 
     return redirect(url_for("backgrounds"))
 
@@ -79,12 +94,31 @@ def settings():
         # Get data from form as dict
         data = request.form.to_dict()
 
+         # Open terminal, resize window, start bot , and close terminal
+        script = """
+        tell application "Terminal"
+        activate
+        set newWindow to do script "cd /Users/wafflehacker/Sites/RedditVideoMakerBot/; exec python3 main.py; exit"
+        delay 1
+        tell newWindow
+            set number of rows to 35
+            set number of columns to 140
+        end tell
+    end tell    
+    """
+
+
+
+        proc = subprocess.Popen(['osascript', '-'],
+                                stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE)
+        stdout_output = proc.communicate(script.encode())[0]
+        print(stdout_output.decode())
+
         # Change settings
         config = gui.modify_settings(data, config_load, checks)
 
-    return render_template(
-        "settings.html", file="config.toml", data=config, checks=checks
-    )
+    return render_template("settings.html", file="config.toml", data=config, checks=checks)
 
 
 # Make videos.json accessible
@@ -96,8 +130,12 @@ def videos_json():
 # Make backgrounds.json accessible
 @app.route("/backgrounds.json")
 def backgrounds_json():
-    return send_from_directory("utils", "backgrounds.json")
+    return send_from_directory("utils", "background_videos.json")
 
+# Make background_audios.json accessible
+@app.route("/background_audio.json")
+def background_audios_json():
+    return send_from_directory("utils", "background_audios.json")
 
 # Make videos in results folder accessible
 @app.route("/results/<path:name>")

@@ -12,7 +12,6 @@ voices = [
     "Domi",
     "Elli",
     "Josh",
-    "Rachel",
     "Sam",
 ]
 
