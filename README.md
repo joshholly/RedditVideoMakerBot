@@ -38,9 +38,8 @@ This can also be used to update the installation
 4. Run `python main.py`
 5. Visit [the Reddit Apps page.](https://www.reddit.com/prefs/apps), and set up an app that is a "script". Paste any URL in redirect URL. Ex:google.com
 6. The bot will ask you to fill in your details to connect to the Reddit API, and configure the bot to your liking
-7. Enjoy 😎
-8. If you need to reconfigure the bot, simply open the `config.toml` file and delete the lines that need to be changed. On the next run of the bot, it will help you reconfigure those options.
-9. From now on, to run your bot, simply run `python GUI.py` and enter the Thread ID and/or other configs, as soon as you Save Changes, the bot will run. No need to manually edit config.toml every time! (WaffleHacker Feature Add)
+7. From now on, to run your bot, simply run `python GUI.py` and enter the Thread ID and/or other configs, as soon as you Save Changes, the bot will run. No need to manually edit config.toml every time! (WaffleHacker Feature Add)
+8. Enjoy 😎
 
 (Note if you got an error installing or running the bot try first rerunning the command with a three after the name e.g. python3 or pip3)
 
