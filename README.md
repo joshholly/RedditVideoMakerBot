@@ -1,22 +1,8 @@
-# Reddit Video Maker Bot 🎥
+# Reddit Video Maker Bot - Waffle Hacker Custom Fork 🎥
 
 All done WITHOUT video editing or asset compiling. Just pure ✨programming magic✨.
 
-Created by Lewis Menelaws & [TMRRW](https://tmrrwinc.ca)
-
-<a target="_blank" href="https://tmrrwinc.ca">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/6053155/170528535-e274dc0b-7972-4b27-af22-637f8c370133.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/6053155/170528582-cb6671e7-5a2f-4bd4-a048-0e6cfa54f0f7.png">
-  <img src="https://user-images.githubusercontent.com/6053155/170528582-cb6671e7-5a2f-4bd4-a048-0e6cfa54f0f7.png" width="350">
-</picture>
-
-</a>
-
-## Video Explainer
-
-[![lewisthumbnail](https://user-images.githubusercontent.com/6053155/173631669-1d1b14ad-c478-4010-b57d-d79592a789f2.png)
-](https://www.youtube.com/watch?v=3gjcY_00U1w)
+WaffleHacker Custom Fork. Bot originally created by Lewis Menelaws & [TMRRW](https://tmrrwinc.ca)
 
 ## Motivation 🤔
 
@@ -54,38 +40,18 @@ This can also be used to update the installation
 6. The bot will ask you to fill in your details to connect to the Reddit API, and configure the bot to your liking
 7. Enjoy 😎
 8. If you need to reconfigure the bot, simply open the `config.toml` file and delete the lines that need to be changed. On the next run of the bot, it will help you reconfigure those options.
+9. From now on, to run your bot, simply run `python GUI.py` and enter the Thread ID and/or other configs, as soon as you Save Changes, the bot will run. No need to manually edit config.toml every time! (WaffleHacker Feature Add)
 
 (Note if you got an error installing or running the bot try first rerunning the command with a three after the name e.g. python3 or pip3)
 
 If you want to read more detailed guide about the bot, please refer to the [documentation](https://reddit-video-maker-bot.netlify.app/)
 
-## Video
-
-https://user-images.githubusercontent.com/66544866/173453972-6526e4e6-c6ef-41c5-ab40-5d275e724e7c.mp4
-
-## Contributing & Ways to improve 📈
-
-In its current state, this bot does exactly what it needs to do. However, improvements can always be made!
-
-I have tried to simplify the code so anyone can read it and start contributing at any skill level. Don't be shy :) contribute!
-
-- [ ] Creating better documentation and adding a command line interface.
-- [x] Allowing the user to choose background music for their videos.
-- [x] Allowing users to choose a reddit thread instead of being randomized.
-- [x] Allowing users to choose a background that is picked instead of the Minecraft one.
-- [x] Allowing users to choose between any subreddit.
-- [x] Allowing users to change voice.
-- [x] Checks if a video has already been created
-- [x] Light and Dark modes
-- [x] NSFW post filter
-
-Please read our [contributing guidelines](CONTRIBUTING.md) for more detailed information.
-
-### For any questions or support join the [Discord](https://discord.gg/Vkanmh6C8V) server
 
 ## Developers and maintainers.
 
 Elebumm (Lewis#6305) - https://github.com/elebumm (Founder)
+
+Josh Holly (WaffleHacker#1480) - https://github.com/joshholly (Bug Fixer and Feature Adder)
 
 Jason (JasonLovesDoggo#1904) - https://github.com/JasonLovesDoggo (Maintainer)
 
