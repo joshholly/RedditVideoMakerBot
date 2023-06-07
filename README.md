@@ -11,6 +11,19 @@ The only original thing being done is the editing and gathering of all materials
 
 ... but what if we can automate that process? 🤔
 
+## Custom features that I added
+
+- Fully loaded GUI with the ability to configure background audio, toggle story mode, and start bot from GUI
+- Add opacity to the screenshots 
+
+## Features Out the Box
+
+- Add background video and background audio
+- Regular Mode and Story Mode (Regular mode shows screenshots of the reddit post title and comments, story mode just shows the text of the story from the reddit post
+- Auto generate videos by grabbing top reddit threads or create  from a specific reddit thread of your chosing
+- Choose a narrator voice
+- Toggle Randomize Voice for each reddit comment
+
 ## Disclaimers 🚨
 
 - **At the moment**, this repository won't attempt to upload this content through this bot. It will give you a file that
